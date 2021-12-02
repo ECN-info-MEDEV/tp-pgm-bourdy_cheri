@@ -21,7 +21,7 @@ public class PgmReader
         }
         sc.nextLine(); //comment
         String line = sc.nextLine(); //Size
-        String[] tokens = line.split("  ");
+        String[] tokens = line.replace("  ", " ").split(" ");
         int width = Integer.parseInt(tokens[0]);
         int height = Integer.parseInt(tokens[1]);
         sc.nextLine(); //Max color (255)
@@ -30,10 +30,12 @@ public class PgmReader
         int counter = 0;
         while(sc.hasNextLine()) {
             line = sc.nextLine();
-            tokens = line.split("  ");
+            tokens = line.split(" ");
             for(String token : tokens) {
-                img[counter / width][counter % width] = Integer.parseInt(token.trim());
-                counter++;
+                if(!token.isEmpty()) {
+                    img[counter / width][counter % width] = Integer.parseInt(token.trim());
+                    counter++;
+                }
             }
         }
         sc.close();
@@ -54,5 +56,29 @@ public class PgmReader
             }
         }
         return histo;
+    }
+
+    /**
+     * Computes the difference between the two images (img1 - img2) <br>
+     * Invalid pixels are equals to 0
+     *
+     * @param img1 Image 1
+     * @param img2 Image 2
+     * @return The result of img1 - img2, with a size equals to the bigger of the two images
+     */
+    public int[][] difference(int[][] img1, int[][] img2) {
+        int[][] newImg = new int[Math.max(img1.length, img2.length)][Math.max(img1[0].length, img2[0].length)];
+
+        for (int i = 0; i < newImg.length; i++) {
+            for (int j = 0; j < newImg[0].length; j++) {
+                if(i < img1.length && j < img1[0].length) {
+                    newImg[i][j] = img1[i][j];
+                }
+                if(i < img2.length && j < img2[0].length) {
+                    newImg[i][j] = newImg[i][j] - img2[i][j];
+                }
+            }
+        }
+        return newImg;
     }
 }

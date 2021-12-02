@@ -1,40 +1,44 @@
 package edu.ecn.medev2021;
 
+import javax.swing.*;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class TP3Medev
-{
+public class TP3Medev {
     public static void main(String[] args) {
         PgmReader reader = new PgmReader();
         try {
             File file = new File("baboon.pgm");
-            System.out.println("File "+file.getAbsolutePath());
+            System.out.println("File " + file.getAbsolutePath());
             int[][] img = reader.readPgmFile(file);
             int[] histogram = reader.getHistogram(img);
             System.out.println(Arrays.toString(histogram));
 
             PgmGenerator generator = new PgmGenerator();
-            img = generator.generatePgmImage(256, 256);
-            System.out.println(Arrays.toString(reader.getHistogram(img)));
-            generator.writePgmImage(new File("test1.pgm"), img);
+            int[][] img2 = generator.generatePgmImage(256, 256);
+            System.out.println(Arrays.toString(reader.getHistogram(img2)));
+            generator.writePgmImage(new File("test1.pgm"), img2);
 
-            file = new File("test1.pgm");
+            /*file = new File("test1.pgm");
             System.out.println("File "+file.getAbsolutePath());
             img = reader.readPgmFile(file);
             histogram = reader.getHistogram(img);
-            System.out.println(Arrays.toString(histogram));
+            System.out.println(Arrays.toString(histogram));*/
+
+            img = reader.difference(img2, img);
+            displayImage(img);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-            /*for(int[] line : img) {
-                for(int pixel : line) {
-                    System.out.print(pixel+" ");
-                }
-                System.out.println();
-            }*/
+    public static void displayImage(int[][] img) {
+        for (int[] line : img) {
+            for (int pixel : line) {
+                System.out.print(pixel + " ");
+            }
+            System.out.println();
+        }
+    }
 }
