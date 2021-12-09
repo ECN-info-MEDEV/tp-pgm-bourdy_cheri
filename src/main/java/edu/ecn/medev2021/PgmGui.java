@@ -2,7 +2,6 @@ package edu.ecn.medev2021;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.Rectangle2D;
 
 public class PgmGui {
     private JTextField textField1;
@@ -19,6 +18,7 @@ public class PgmGui {
     private JPanel imgDisplay1;
     private JPanel imgDisplay2;
     private JButton histogramButton2;
+    private JButton resizeButton;
 
     private final PgmGuiController controller1;
     private final PgmGuiController controller2;
@@ -56,6 +56,14 @@ public class PgmGui {
         image1Image2Button.addActionListener(e -> {
             controller2.generateDiffWith(controller1.getLoadedImg());
             imgDisplay2.repaint();
+        });
+        resizeButton.addActionListener(e -> {
+            if (controller2.getLoadedImg() != null) {
+                String width = JOptionPane.showInputDialog(rootPane, "Enter the new image with", "" + controller2.getLoadedImg()[0].length, JOptionPane.QUESTION_MESSAGE);
+                String height = JOptionPane.showInputDialog(rootPane, "Enter the new image height", "" + controller2.getLoadedImg().length, JOptionPane.QUESTION_MESSAGE);
+                controller2.resizeImage(Integer.parseInt(width), Integer.parseInt(height));
+                imgDisplay2.repaint();
+            }
         });
     }
 
@@ -188,6 +196,13 @@ public class PgmGui {
         gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         rootPane.add(textField1, gbc);
+        resizeButton = new JButton();
+        resizeButton.setText("Resize");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 7;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        rootPane.add(resizeButton, gbc);
     }
 
     /**

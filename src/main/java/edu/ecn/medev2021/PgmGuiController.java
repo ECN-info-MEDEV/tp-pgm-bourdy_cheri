@@ -31,7 +31,6 @@ public class PgmGuiController {
         generator = new PgmGenerator();
     }
 
-    //TODO PUT ARGS IN THE CONTROLLER, AND INSTANTIATE FOR EACH INDEX
     public void clickLoad() {
         String name = field.getText();
         if (!name.isEmpty()) {
@@ -114,5 +113,12 @@ public class PgmGuiController {
         } else {
             state.setText("Chargez une image avant cela");
         }
+    }
+
+    public void resizeImage(int newWith, int newHeight) {
+        int[][] newImage = new int[newHeight][newWith];
+        //todo resize
+        loadedImg = newImage;
+        state.setText("Image redimensionnée !");
     }
 }
