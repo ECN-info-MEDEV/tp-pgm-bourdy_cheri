@@ -3,7 +3,6 @@ package edu.ecn.medev2021;
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
-import java.net.InetSocketAddress;
 import java.util.Arrays;
 
 public class PgmGuiController {
@@ -51,7 +50,7 @@ public class PgmGuiController {
     }
 
     public void generateHistogram() {
-        if(loadedImg != null) {
+        if (loadedImg != null) {
             int[] histogram = reader.getHistogram(loadedImg);
             System.out.println(Arrays.toString(histogram));
             this.histogram = histogram;
@@ -62,27 +61,14 @@ public class PgmGuiController {
     }
 
     public void generateRandom() {
-        String name = field.getText();
-        if (!name.isEmpty()) {
-            try {
-                histogram = null;
-                int[][] img = generator.generatePgmImage(512, 512);
-                System.out.println(Arrays.toString(reader.getHistogram(img)));
-                generator.writePgmImage(new File(name), img);
-                loadedImg = img;
-                state.setText("Image sauvegardée sous "+name+" !");
-            } catch (IOException e) {
-                state.setText("Une erreur est survenue !");
-                e.printStackTrace();
-            }
-        } else {
-            state.setText("Entrez un nom de fichier !");
-        }
+        histogram = null;
+        loadedImg = generator.generatePgmImage(512, 512);
+        state.setText("Image générée !");
     }
 
     public void generateDiffWith(int[][] loadedImg) {
-        if(loadedImg != null) {
-            if(this.loadedImg != null) {
+        if (loadedImg != null) {
+            if (this.loadedImg != null) {
                 this.loadedImg = reader.difference(loadedImg, this.loadedImg);
                 for (int i = 0; i < this.loadedImg.length; i++) {
                     int[] line = this.loadedImg[i];
@@ -102,7 +88,7 @@ public class PgmGuiController {
 
     //TODO DOC
     public void thresholdImage() {
-        if(loadedImg != null) {
+        if (loadedImg != null) {
             for (int i = 0; i < this.loadedImg.length; i++) {
                 int[] line = this.loadedImg[i];
                 for (int j = 0; j < line.length; j++) {
@@ -119,5 +105,15 @@ public class PgmGuiController {
     public void resizeImage(int newWith, int newHeight) {
         loadedImg = reader.resizeImage(loadedImg, newHeight, newWith);
         state.setText("Image redimensionnée !");
+    }
+
+    public void saveImage(String name) {
+        try {
+            generator.writePgmImage(new File(name), loadedImg);
+            state.setText("Image sauvegardée !");
+        } catch (IOException e) {
+            state.setText("Erreur : " + e);
+            e.printStackTrace();
+        }
     }
 }

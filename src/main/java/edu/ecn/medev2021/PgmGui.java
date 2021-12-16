@@ -19,6 +19,8 @@ public class PgmGui {
     private JPanel imgDisplay2;
     private JButton histogramButton2;
     private JButton resizeButton;
+    private JButton saveButton;
+    private JButton saveButton1;
 
     private final PgmGuiController controller1;
     private final PgmGuiController controller2;
@@ -26,6 +28,7 @@ public class PgmGui {
     public PgmGui() {
         $$$setupUI$$$();
 
+        //Left part
         controller1 = new PgmGuiController(this, textField2, state1);
         loadButton.addActionListener(e -> {
             controller1.clickLoad();
@@ -43,7 +46,14 @@ public class PgmGui {
             controller1.thresholdImage();
             imgDisplay1.repaint();
         });
+        saveButton1.addActionListener(e -> {
+            if (controller1.getLoadedImg() != null) {
+                String name = JOptionPane.showInputDialog(rootPane, "Enter the new file name", "File name ?", JOptionPane.QUESTION_MESSAGE);
+                controller1.saveImage(name);
+            }
+        });
 
+        //Right part
         controller2 = new PgmGuiController(this, textField1, state2);
         loadButton1.addActionListener(e -> {
             controller2.clickLoad();
@@ -63,6 +73,12 @@ public class PgmGui {
                 String height = JOptionPane.showInputDialog(rootPane, "Enter the new image height", "" + controller2.getLoadedImg().length, JOptionPane.QUESTION_MESSAGE);
                 controller2.resizeImage(Integer.parseInt(width), Integer.parseInt(height));
                 imgDisplay2.repaint();
+            }
+        });
+        saveButton.addActionListener(e -> {
+            if (controller2.getLoadedImg() != null) {
+                String name = JOptionPane.showInputDialog(rootPane, "Enter the new file name", "File name ?", JOptionPane.QUESTION_MESSAGE);
+                controller2.saveImage(name);
             }
         });
     }
@@ -107,7 +123,7 @@ public class PgmGui {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         rootPane.add(loadButton, gbc);
         generateRandomSaveButton = new JButton();
-        generateRandomSaveButton.setText("Generate random + Save");
+        generateRandomSaveButton.setText("Generate random");
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 6;
@@ -203,6 +219,20 @@ public class PgmGui {
         gbc.gridy = 7;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         rootPane.add(resizeButton, gbc);
+        saveButton = new JButton();
+        saveButton.setText("Save");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 1;
+        gbc.gridy = 8;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        rootPane.add(saveButton, gbc);
+        saveButton1 = new JButton();
+        saveButton1.setText("Save");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 8;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        rootPane.add(saveButton1, gbc);
     }
 
     /**
