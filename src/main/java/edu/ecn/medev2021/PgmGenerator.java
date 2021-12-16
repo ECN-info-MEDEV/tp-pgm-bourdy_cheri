@@ -25,6 +25,13 @@ public class PgmGenerator {
         return img;
     }
 
+    /**
+     * Saves the given image
+     *
+     * @param writeTo The location of the new image. Overwritten if it already exists
+     * @param image The image to save
+     * @throws IOException If an error occurs writing the file
+     */
     public void writePgmImage(File writeTo, int[][] image) throws IOException {
         writeTo.createNewFile();
         FileWriter writer = new FileWriter(writeTo);

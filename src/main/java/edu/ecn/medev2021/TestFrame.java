@@ -2,6 +2,9 @@ package edu.ecn.medev2021;
 
 import javax.swing.*;
 
+/**
+ * Shows the {@link PgmGui}
+ */
 public class TestFrame
 {
     public static void main(String[] args) {

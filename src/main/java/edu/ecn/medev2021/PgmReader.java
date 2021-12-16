@@ -5,6 +5,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * A reader for pgm files, with functions allowing to manipulate these images
+ */
 public class PgmReader
 {
     /**
@@ -82,10 +85,16 @@ public class PgmReader
         return newImg;
     }
 
+    /**
+     * Resizes the given image
+     *
+     * @param loadedImg The initial image, not modified
+     * @param newWith The new image width
+     * @param newHeight The new image height
+     * @return A new, resized, image
+     */
     public int[][] resizeImage(int[][] loadedImg, int newWith, int newHeight) {
         int[][] newImage = new int[newHeight][newWith];
-        //todo resize
-        //loadedImg = newImage;
         int height = loadedImg.length;
         int width = loadedImg[0].length;
         for (int i=0; i<newHeight; i++) {
@@ -93,8 +102,6 @@ public class PgmReader
                 newImage[i][j] = loadedImg[i*height/newHeight][j*width/newWith];
             }
         }
-        loadedImg = newImage;
-        //state.setText("Image redimensionnée !");
-        return loadedImg ;
+        return newImage;
     }
 }

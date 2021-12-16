@@ -5,6 +5,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
+/**
+ * A simple test for the pgm code
+ */
 public class TP3Medev {
     public static void main(String[] args) {
         PgmReader reader = new PgmReader();
