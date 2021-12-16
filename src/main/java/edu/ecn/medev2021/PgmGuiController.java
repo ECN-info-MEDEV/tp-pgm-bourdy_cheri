@@ -3,6 +3,7 @@ package edu.ecn.medev2021;
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.util.Arrays;
 
 public class PgmGuiController {
@@ -118,6 +119,14 @@ public class PgmGuiController {
     public void resizeImage(int newWith, int newHeight) {
         int[][] newImage = new int[newHeight][newWith];
         //todo resize
+        //loadedImg = newImage;
+        int height = loadedImg.length;
+        int width = loadedImg[0].length;
+        for (int i=0; i<newHeight; i++) {
+            for (int j=0; j<newWith; j++) {
+                newImage[i][j] = loadedImg[i*height/newHeight][j*width/newWith];
+            }
+        }
         loadedImg = newImage;
         state.setText("Image redimensionnée !");
     }
