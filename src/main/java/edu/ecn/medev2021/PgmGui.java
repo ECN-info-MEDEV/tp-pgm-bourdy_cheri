@@ -19,6 +19,8 @@ public class PgmGui {
     private JPanel imgDisplay2;
     private JButton histogramButton2;
     private JButton resizeButton;
+    private JButton saveButton;
+    private JButton saveButton1;
 
     private final PgmGuiController controller1;
     private final PgmGuiController controller2;
@@ -26,6 +28,7 @@ public class PgmGui {
     public PgmGui() {
         $$$setupUI$$$();
 
+        //Left part
         controller1 = new PgmGuiController(this, textField2, state1);
         loadButton.addActionListener(e -> {
             controller1.clickLoad();
@@ -43,7 +46,14 @@ public class PgmGui {
             controller1.thresholdImage();
             imgDisplay1.repaint();
         });
+        saveButton1.addActionListener(e -> {
+            if (controller1.getLoadedImg() != null) {
+                String name = JOptionPane.showInputDialog(rootPane, "Enter the new file name", "File name ?", JOptionPane.QUESTION_MESSAGE);
+                controller1.saveImage(name);
+            }
+        });
 
+        //Right part
         controller2 = new PgmGuiController(this, textField1, state2);
         loadButton1.addActionListener(e -> {
             controller2.clickLoad();
@@ -63,6 +73,12 @@ public class PgmGui {
                 String height = JOptionPane.showInputDialog(rootPane, "Enter the new image height", "" + controller2.getLoadedImg().length, JOptionPane.QUESTION_MESSAGE);
                 controller2.resizeImage(Integer.parseInt(width), Integer.parseInt(height));
                 imgDisplay2.repaint();
+            }
+        });
+        saveButton.addActionListener(e -> {
+            if (controller2.getLoadedImg() != null) {
+                String name = JOptionPane.showInputDialog(rootPane, "Enter the new file name", "File name ?", JOptionPane.QUESTION_MESSAGE);
+                controller2.saveImage(name);
             }
         });
     }
@@ -102,15 +118,15 @@ public class PgmGui {
         loadButton.setText("Load");
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
-        gbc.gridy = 5;
+        gbc.gridy = 4;
         gbc.weightx = 1.0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         rootPane.add(loadButton, gbc);
         generateRandomSaveButton = new JButton();
-        generateRandomSaveButton.setText("Generate random + Save");
+        generateRandomSaveButton.setText("Generate random");
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
-        gbc.gridy = 7;
+        gbc.gridy = 6;
         gbc.weightx = 1.0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         rootPane.add(generateRandomSaveButton, gbc);
@@ -118,7 +134,7 @@ public class PgmGui {
         seuillageButton.setText("Seuillage");
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
-        gbc.gridy = 8;
+        gbc.gridy = 7;
         gbc.weightx = 1.0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         rootPane.add(seuillageButton, gbc);
@@ -126,14 +142,14 @@ public class PgmGui {
         histogramButton.setText("Histogram");
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
-        gbc.gridy = 6;
+        gbc.gridy = 5;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         rootPane.add(histogramButton, gbc);
         loadButton1 = new JButton();
         loadButton1.setText("Load");
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
-        gbc.gridy = 5;
+        gbc.gridy = 4;
         gbc.weightx = 1.0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         rootPane.add(loadButton1, gbc);
@@ -141,14 +157,14 @@ public class PgmGui {
         histogramButton2.setText("Histogram");
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
-        gbc.gridy = 6;
+        gbc.gridy = 5;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         rootPane.add(histogramButton2, gbc);
         image1Image2Button = new JButton();
         image1Image2Button.setText("Image 1 - Image 2");
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
-        gbc.gridy = 7;
+        gbc.gridy = 6;
         gbc.weightx = 1.0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         rootPane.add(image1Image2Button, gbc);
@@ -156,7 +172,7 @@ public class PgmGui {
         state1.setText("Chargez une image");
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
-        gbc.gridy = 4;
+        gbc.gridy = 3;
         gbc.anchor = GridBagConstraints.WEST;
         rootPane.add(state1, gbc);
         textField2 = new JTextField();
@@ -172,18 +188,18 @@ public class PgmGui {
         state2.setText("Chargez une image");
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
-        gbc.gridy = 4;
+        gbc.gridy = 3;
         gbc.anchor = GridBagConstraints.WEST;
         rootPane.add(state2, gbc);
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
-        gbc.gridy = 3;
+        gbc.gridy = 2;
         gbc.fill = GridBagConstraints.BOTH;
         gbc.ipady = 500;
         rootPane.add(imgDisplay1, gbc);
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
-        gbc.gridy = 3;
+        gbc.gridy = 2;
         gbc.fill = GridBagConstraints.BOTH;
         gbc.ipady = 500;
         rootPane.add(imgDisplay2, gbc);
@@ -200,23 +216,23 @@ public class PgmGui {
         resizeButton.setText("Resize");
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
-        gbc.gridy = 8;
+        gbc.gridy = 7;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         rootPane.add(resizeButton, gbc);
-        button1 = new JButton();
-        button1.setText("Button");
-        gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = 2;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        rootPane.add(button1, gbc);
-        button2 = new JButton();
-        button2.setText("Button");
+        saveButton = new JButton();
+        saveButton.setText("Save");
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
-        gbc.gridy = 2;
+        gbc.gridy = 8;
         gbc.fill = GridBagConstraints.HORIZONTAL;
-        rootPane.add(button2, gbc);
+        rootPane.add(saveButton, gbc);
+        saveButton1 = new JButton();
+        saveButton1.setText("Save");
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 8;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        rootPane.add(saveButton1, gbc);
     }
 
     /**
