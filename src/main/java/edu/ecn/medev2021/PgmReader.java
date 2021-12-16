@@ -81,4 +81,20 @@ public class PgmReader
         }
         return newImg;
     }
+
+    public int[][] resizeImage(int[][] loadedImg, int newWith, int newHeight) {
+        int[][] newImage = new int[newHeight][newWith];
+        //todo resize
+        //loadedImg = newImage;
+        int height = loadedImg.length;
+        int width = loadedImg[0].length;
+        for (int i=0; i<newHeight; i++) {
+            for (int j=0; j<newWith; j++) {
+                newImage[i][j] = loadedImg[i*height/newHeight][j*width/newWith];
+            }
+        }
+        loadedImg = newImage;
+        //state.setText("Image redimensionnée !");
+        return loadedImg ;
+    }
 }

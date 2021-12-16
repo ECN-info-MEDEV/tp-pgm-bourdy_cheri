@@ -41,6 +41,16 @@ public class PgmReaderTest {
     }
 
     @Test
+    public void resizePgmFile() throws FileNotFoundException {
+        int[][] nimg = reader.resizeImage(image, 3, 3);
+        int[][] correct = new int[][] {new int[] {0, 0, 0},
+                new int[] {0, 255, 255},
+                new int[] {0, 255, 255}
+        };
+        Assert.assertArrayEquals(correct, nimg);
+    }
+
+    @Test
     public void getHistogram() {
         int nb255 = 8*8-4;
         int nb50 = 4;
