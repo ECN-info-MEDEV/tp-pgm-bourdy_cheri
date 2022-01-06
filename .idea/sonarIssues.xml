@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/.m2/settings.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/edu/ecn/medev2021/PgmGui.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/edu/ecn/medev2021/PgmGuiController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../PAPPL/NewFerret/src/main/java/fr/ferret/controller/GenePanelController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../PAPPL/NewFerret/src/main/java/fr/ferret/controller/LocusPanelController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../PAPPL/NewFerret/src/main/java/fr/ferret/controller/RunButtonListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../PAPPL/NewFerret/src/main/java/fr/ferret/controller/VariantPanelController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../PAPPL/NewFerret/src/main/java/fr/ferret/controller/settings/SettingsFrameController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../PAPPL/NewFerret/src/main/java/fr/ferret/view/panel/GenePanel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../PAPPL/NewFerret/src/main/java/fr/ferret/view/panel/LocusPanel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../PAPPL/NewFerret/src/main/java/fr/ferret/view/panel/RunPanel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../PAPPL/NewFerret/src/main/java/fr/ferret/view/panel/VariantPanel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../PAPPL/NewFerret/src/main/java/fr/ferret/view/panel/header/AboutFrame.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../PAPPL/NewFerret/src/main/java/fr/ferret/view/panel/header/LinkLabel.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../PAPPL/NewFerret/src/main/java/fr/ferret/view/panel/header/SettingsFrame.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../PAPPL/NewFerret/src/main/java/fr/ferret/view/panel/header/UpdateFrame.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
