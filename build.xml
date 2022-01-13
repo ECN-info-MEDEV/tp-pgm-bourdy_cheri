@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="testAnt" default="build" basedir=".">
+    <description>This is a simple test project.</description>
+
+    <property name="testdir" location="src/test"/>
+    <property name="srcdir" location="src"/>
+    <property name="full-compile" value="true"/>
+
+    <path id="classpath.base"/>
+
+    <path id="classpath.test">
+        <pathelement location="lib/junit-4.12.jar"/>
+        <pathelement location="${testdir}"/>
+        <pathelement location="${srcdir}"/>
+        <path refid="classpath.base"/>
+    </path>
+
+    <target name="checkDependencies"
+            description="Check if dependencies are satisfied">
+        <property name="src.location" location="src"/>
+        <property name="src.available" location="true"/>
+        <property name="classes.location" location="build/classes"/>
+        <property name="jar.location" location="build"/>
+        <echo message="Source directory is ${src.location}"/>
+        <echo message="Classes directory is ${classes.location}"/>
+        <condition property="src.available">
+            <and>
+                <available file="${src.location}" type="dir"/>
+                <available file="${classes.location}" type="dir"/>
+            </and>
+        </condition>
+    </target>
+    <target name="build" description="Build the application"
+            depends="checkDependencies" if="src.available">
+        <echo message="Building application..."/>
+        <javac srcdir="${src.location}" destdir="${classes.location}"
+               includeAntRuntime="false">
+            <classpath refid="classpath.test"/>
+        </javac>
+        <echo message="Done!"/>
+    </target>
+
+    <target name="jar" description="Build the application"
+            depends="build" if="src.available">
+        <jar destfile="${jar.location}/PgmReader.jar" basedir="${classes.location}">
+            <manifest>
+                <attribute name="MainClass" value="edu.ecn.medev2021.TestFrame"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <!--- <target name = "test" depends = "build">
+        <junit>
+            <classpath refid = "classpath.test" />
+            <formatter type = "brief" usefile = "false" />
+            <test name = "PgmReaderTest" />
+        </junit>
+    </target> -->
+</project>
