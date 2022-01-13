@@ -2,9 +2,10 @@
 <project name="testAnt" default="build" basedir=".">
     <description>This is a simple test project.</description>
 
-    <property name="testdir" location="src/test"/>
-    <property name="srcdir" location="src"/>
+    <property name="testdir" location="src/test/java"/>
+    <property name="srcdir" location="src/main/java"/>
     <property name="full-compile" value="true"/>
+    <property name="classes.location" location="build/classes"/>
 
     <path id="classpath.base"/>
 
@@ -12,20 +13,19 @@
         <pathelement location="lib/junit-4.12.jar"/>
         <pathelement location="${testdir}"/>
         <pathelement location="${srcdir}"/>
+        <pathelement location="${classes.location}"/>
         <path refid="classpath.base"/>
     </path>
 
     <target name="checkDependencies"
             description="Check if dependencies are satisfied">
-        <property name="src.location" location="src"/>
         <property name="src.available" location="true"/>
-        <property name="classes.location" location="build/classes"/>
         <property name="jar.location" location="build"/>
-        <echo message="Source directory is ${src.location}"/>
+        <echo message="Source directory is ${srcdir}"/>
         <echo message="Classes directory is ${classes.location}"/>
         <condition property="src.available">
             <and>
-                <available file="${src.location}" type="dir"/>
+                <available file="${srcdir}" type="dir"/>
                 <available file="${classes.location}" type="dir"/>
             </and>
         </condition>
@@ -33,8 +33,8 @@
     <target name="build" description="Build the application"
             depends="checkDependencies" if="src.available">
         <echo message="Building application..."/>
-        <javac srcdir="${src.location}" destdir="${classes.location}"
-               includeAntRuntime="false">
+        <javac srcdir="${srcdir}" destdir="${classes.location}"
+               includeAntRuntime="false" verbose="true">
             <classpath refid="classpath.test"/>
         </javac>
         <echo message="Done!"/>
@@ -44,16 +44,25 @@
             depends="build" if="src.available">
         <jar destfile="${jar.location}/PgmReader.jar" basedir="${classes.location}">
             <manifest>
-                <attribute name="MainClass" value="edu.ecn.medev2021.TestFrame"/>
+                <attribute name="Main-Class" value="edu.ecn.medev2021.TestFrame"/>
             </manifest>
         </jar>
     </target>
 
-    <!--- <target name = "test" depends = "build">
+    <target name = "test" depends = "build">
         <junit>
             <classpath refid = "classpath.test" />
             <formatter type = "brief" usefile = "false" />
-            <test name = "PgmReaderTest" />
+            <test name = "edu.ecn.medev2021.PgmReaderTest" />
         </junit>
-    </target> -->
+    </target>
+
+    <target name="javadoc" description="Javadoc the application"
+            depends="checkDependencies" if="src.available">
+        <javadoc sourcepath="${srcdir}"
+                 destdir="docs/api"
+                 author="true"
+                 windowtitle="Test API">
+        </javadoc>
+    </target>
 </project>
