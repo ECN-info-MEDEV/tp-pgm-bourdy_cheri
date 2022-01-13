@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.5.0" sequence="0" timestamp="1639650257302" analysisTimestamp="1641456808543" release="">
+  <Project>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\edu\ecn\medev2021\PgmGenerator.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\edu\ecn\medev2021\PgmGui.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\edu\ecn\medev2021\PgmGui$1.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\edu\ecn\medev2021\PgmGui$2.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\edu\ecn\medev2021\PgmGuiController.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\edu\ecn\medev2021\PgmReader.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\edu\ecn\medev2021\TP3Medev.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\edu\ecn\medev2021\TestFrame.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\com\intellij\uiDesigner\core\AbstractLayout.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\com\intellij\uiDesigner\core\DimensionInfo.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\com\intellij\uiDesigner\core\GridConstraints.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\com\intellij\uiDesigner\core\GridLayoutManager.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\com\intellij\uiDesigner\core\HorizontalInfo.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\com\intellij\uiDesigner\core\LayoutState.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\com\intellij\uiDesigner\core\Spacer.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\com\intellij\uiDesigner\core\SupportCode$TextWithMnemonic.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\com\intellij\uiDesigner\core\SupportCode.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\com\intellij\uiDesigner\core\Util.class</Jar>
+    <Jar>D:\ECN\MEDEV\HelloWorld\target\classes\com\intellij\uiDesigner\core\VerticalInfo.class</Jar>
+    <AuxClasspathEntry>D:\ECN\MEDEV\HelloWorld\target\classes</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\ECN\MEDEV\HelloWorld\.scannerwork\findbugs\annotations.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\ECN\MEDEV\HelloWorld\.scannerwork\findbugs\jsr305.jar</AuxClasspathEntry>
+    <WrkDir>D:\ECN\MEDEV\HelloWorld\.scannerwork</WrkDir>
+  </Project>
+  <Errors errors="0" missingClasses="1">
+    <MissingClass>actionPerformed</MissingClass>
+  </Errors>
+  <FindBugsSummary timestamp="Thu, 16 Dec 2021 11:24:17 +0100" total_classes="19" referenced_classes="322" total_bugs="0" total_size="1658" num_packages="2" java_version="11.0.11" vm_version="11.0.11+9" cpu_seconds="19.48" clock_seconds="4.72" peak_mbytes="428.92" alloc_mbytes="3936.00" gc_seconds="0.07">
+    <FileStats path="com/intellij/uiDesigner/core/AbstractLayout.java" bugCount="0" size="117"/>
+    <FileStats path="com/intellij/uiDesigner/core/DimensionInfo.java" bugCount="0" size="139"/>
+    <FileStats path="com/intellij/uiDesigner/core/GridConstraints.java" bugCount="0" size="226"/>
+    <FileStats path="com/intellij/uiDesigner/core/GridLayoutManager.java" bugCount="0" size="495"/>
+    <FileStats path="com/intellij/uiDesigner/core/HorizontalInfo.java" bugCount="0" size="20"/>
+    <FileStats path="com/intellij/uiDesigner/core/LayoutState.java" bugCount="0" size="34"/>
+    <FileStats path="com/intellij/uiDesigner/core/Spacer.java" bugCount="0" size="7"/>
+    <FileStats path="com/intellij/uiDesigner/core/SupportCode.java" bugCount="0" size="44"/>
+    <FileStats path="com/intellij/uiDesigner/core/Util.java" bugCount="0" size="70"/>
+    <FileStats path="com/intellij/uiDesigner/core/VerticalInfo.java" bugCount="0" size="20"/>
+    <FileStats path="edu/ecn/medev2021/PgmGenerator.java" bugCount="0" size="31"/>
+    <FileStats path="edu/ecn/medev2021/PgmGui.java" bugCount="0" size="288"/>
+    <FileStats path="edu/ecn/medev2021/PgmGuiController.java" bugCount="0" size="89"/>
+    <FileStats path="edu/ecn/medev2021/PgmReader.java" bugCount="0" size="39"/>
+    <FileStats path="edu/ecn/medev2021/TP3Medev.java" bugCount="0" size="26"/>
+    <FileStats path="edu/ecn/medev2021/TestFrame.java" bugCount="0" size="13"/>
+    <PackageStats package="com.intellij.uiDesigner.core" total_bugs="0" total_types="11" total_size="1172">
+      <ClassStats class="com.intellij.uiDesigner.core.AbstractLayout" sourceFile="AbstractLayout.java" interface="false" size="117" bugs="0"/>
+      <ClassStats class="com.intellij.uiDesigner.core.DimensionInfo" sourceFile="DimensionInfo.java" interface="false" size="139" bugs="0"/>
+      <ClassStats class="com.intellij.uiDesigner.core.GridConstraints" sourceFile="GridConstraints.java" interface="false" size="226" bugs="0"/>
+      <ClassStats class="com.intellij.uiDesigner.core.GridLayoutManager" sourceFile="GridLayoutManager.java" interface="false" size="495" bugs="0"/>
+      <ClassStats class="com.intellij.uiDesigner.core.HorizontalInfo" sourceFile="HorizontalInfo.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="com.intellij.uiDesigner.core.LayoutState" sourceFile="LayoutState.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="com.intellij.uiDesigner.core.Spacer" sourceFile="Spacer.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="com.intellij.uiDesigner.core.SupportCode" sourceFile="SupportCode.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="com.intellij.uiDesigner.core.SupportCode$TextWithMnemonic" sourceFile="SupportCode.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="com.intellij.uiDesigner.core.Util" sourceFile="Util.java" interface="false" size="70" bugs="0"/>
+      <ClassStats class="com.intellij.uiDesigner.core.VerticalInfo" sourceFile="VerticalInfo.java" interface="false" size="20" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="edu.ecn.medev2021" total_bugs="0" total_types="8" total_size="486">
+      <ClassStats class="edu.ecn.medev2021.PgmGenerator" sourceFile="PgmGenerator.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="edu.ecn.medev2021.PgmGui" sourceFile="PgmGui.java" interface="false" size="266" bugs="0"/>
+      <ClassStats class="edu.ecn.medev2021.PgmGui$1" sourceFile="PgmGui.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="edu.ecn.medev2021.PgmGui$2" sourceFile="PgmGui.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="edu.ecn.medev2021.PgmGuiController" sourceFile="PgmGuiController.java" interface="false" size="89" bugs="0"/>
+      <ClassStats class="edu.ecn.medev2021.PgmReader" sourceFile="PgmReader.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="edu.ecn.medev2021.TP3Medev" sourceFile="TP3Medev.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="edu.ecn.medev2021.TestFrame" sourceFile="TestFrame.java" interface="false" size="13" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.impl.ZipCodeBaseFactory" totalMilliseconds="472" invocations="2" avgMicrosecondsPerInvocation="236210" maxMicrosecondsPerInvocation="268843" standardDeviationMicrosecondsPerInvocation="32633"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="465" invocations="1680" avgMicrosecondsPerInvocation="277" maxMicrosecondsPerInvocation="14219" standardDeviationMicrosecondsPerInvocation="703"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="258" invocations="322" avgMicrosecondsPerInvocation="801" maxMicrosecondsPerInvocation="8105" standardDeviationMicrosecondsPerInvocation="1390"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="244" invocations="1685" avgMicrosecondsPerInvocation="145" maxMicrosecondsPerInvocation="23087" standardDeviationMicrosecondsPerInvocation="676"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="240" invocations="322" avgMicrosecondsPerInvocation="747" maxMicrosecondsPerInvocation="10200" standardDeviationMicrosecondsPerInvocation="1298"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="164" invocations="965" avgMicrosecondsPerInvocation="170" maxMicrosecondsPerInvocation="7344" standardDeviationMicrosecondsPerInvocation="304"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="104" invocations="219" avgMicrosecondsPerInvocation="476" maxMicrosecondsPerInvocation="19567" standardDeviationMicrosecondsPerInvocation="1688"/>
+      <ClassProfile name="com.h3xstream.findsecbugs.taintanalysis.TaintDataflowEngine" totalMilliseconds="95" invocations="215" avgMicrosecondsPerInvocation="444" maxMicrosecondsPerInvocation="12363" standardDeviationMicrosecondsPerInvocation="1197"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="95" invocations="215" avgMicrosecondsPerInvocation="443" maxMicrosecondsPerInvocation="8842" standardDeviationMicrosecondsPerInvocation="924"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="85" invocations="322" avgMicrosecondsPerInvocation="265" maxMicrosecondsPerInvocation="4885" standardDeviationMicrosecondsPerInvocation="505"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="83" invocations="215" avgMicrosecondsPerInvocation="386" maxMicrosecondsPerInvocation="9678" standardDeviationMicrosecondsPerInvocation="994"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="74" invocations="215" avgMicrosecondsPerInvocation="346" maxMicrosecondsPerInvocation="5706" standardDeviationMicrosecondsPerInvocation="637"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="70" invocations="218" avgMicrosecondsPerInvocation="325" maxMicrosecondsPerInvocation="8103" standardDeviationMicrosecondsPerInvocation="726"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="67" invocations="228" avgMicrosecondsPerInvocation="294" maxMicrosecondsPerInvocation="11402" standardDeviationMicrosecondsPerInvocation="791"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="57" invocations="322" avgMicrosecondsPerInvocation="177" maxMicrosecondsPerInvocation="1976" standardDeviationMicrosecondsPerInvocation="260"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="55" invocations="421" avgMicrosecondsPerInvocation="131" maxMicrosecondsPerInvocation="13368" standardDeviationMicrosecondsPerInvocation="668"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="54" invocations="322" avgMicrosecondsPerInvocation="168" maxMicrosecondsPerInvocation="1906" standardDeviationMicrosecondsPerInvocation="300"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="51" invocations="1632" avgMicrosecondsPerInvocation="31" maxMicrosecondsPerInvocation="1315" standardDeviationMicrosecondsPerInvocation="64"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="51" invocations="322" avgMicrosecondsPerInvocation="159" maxMicrosecondsPerInvocation="4379" standardDeviationMicrosecondsPerInvocation="365"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="48" invocations="322" avgMicrosecondsPerInvocation="151" maxMicrosecondsPerInvocation="7385" standardDeviationMicrosecondsPerInvocation="754"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="45" invocations="322" avgMicrosecondsPerInvocation="142" maxMicrosecondsPerInvocation="7100" standardDeviationMicrosecondsPerInvocation="433"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="44" invocations="228" avgMicrosecondsPerInvocation="194" maxMicrosecondsPerInvocation="22767" standardDeviationMicrosecondsPerInvocation="1502"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="38" invocations="153" avgMicrosecondsPerInvocation="251" maxMicrosecondsPerInvocation="3273" standardDeviationMicrosecondsPerInvocation="390"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildStringPassthruGraph" totalMilliseconds="37" invocations="322" avgMicrosecondsPerInvocation="115" maxMicrosecondsPerInvocation="3654" standardDeviationMicrosecondsPerInvocation="290"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ReflectiveClasses" totalMilliseconds="37" invocations="322" avgMicrosecondsPerInvocation="114" maxMicrosecondsPerInvocation="1311" standardDeviationMicrosecondsPerInvocation="212"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

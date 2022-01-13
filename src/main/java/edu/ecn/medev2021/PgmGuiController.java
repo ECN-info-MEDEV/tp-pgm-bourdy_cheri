@@ -53,7 +53,7 @@ public class PgmGuiController {
             try {
                 histogram = null;
                 File file = new File(name);
-                System.out.println("File " + file.getAbsolutePath());
+                TP3Medev.log.info("File " + file.getAbsolutePath());
                 loadedImg = reader.readPgmFile(file);
                 state.setText("Image chargée !");
             } catch (IOException e) {
@@ -70,9 +70,8 @@ public class PgmGuiController {
      */
     public void generateHistogram() {
         if (loadedImg != null) {
-            int[] histogram = reader.getHistogram(loadedImg);
-            System.out.println(Arrays.toString(histogram));
-            this.histogram = histogram;
+            histogram = reader.getHistogram(loadedImg);
+            TP3Medev.log.info(() -> Arrays.toString(histogram));
             state.setText("Histogramme généré");
         } else {
             state.setText("Chargez une image avant cela !");

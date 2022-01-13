@@ -13,8 +13,7 @@ public class TestFrame
         frame.add(gui.getRootPane());
         frame.setName("Pgm gui");
         frame.setSize(1000, 800);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //frame.pack();
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
